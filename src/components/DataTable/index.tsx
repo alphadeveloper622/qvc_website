@@ -96,39 +96,39 @@ export function PageButton({ children, className, ...rest }) {
   );
 }
 
-export function SelectColumnFilter({
-  column: { filterValue, setFilter, preFilteredRows, id, render },
-}) {
-  const options = React.useMemo(() => {
-    const options = new Set();
-    preFilteredRows.forEach((row) => {
-      options.add(row.values[id]);
-    });
-    return [...options.values()];
-  }, [id, preFilteredRows]);
+// export function SelectColumnFilter({
+//   column: { filterValue, setFilter, preFilteredRows, id, render },
+// }) {
+//   const options = React.useMemo(() => {
+//     const options1 = new Set();
+//     preFilteredRows.forEach((row) => {
+//       options1.add(row.values[id]);
+//     });
+//     return [...options1.values()];
+//   }, [id, preFilteredRows]);
 
-  return (
-    <label className="flex items-baseline gap-x-2">
-      <span className="text-gray-700">{render('Header')}: </span>
-      <select
-        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-        name={id}
-        id={id}
-        value={filterValue}
-        onChange={(e) => {
-          setFilter(e.target.value || undefined);
-        }}
-      >
-        <option value="">All</option>
-        {options.map((option, i) => (
-          <option key={i} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    </label>
-  );
-}
+//   return (
+//     <label className="flex items-baseline gap-x-2">
+//       <span className="text-gray-700">{render('Header')}: </span>
+//       <select
+//         className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+//         name={id}
+//         id={id}
+//         value={filterValue}
+//         onChange={(e) => {
+//           setFilter(e.target.value || undefined);
+//         }}
+//       >
+//         <option value="">All</option>
+//         {options.map((option, i) => (
+//           <option key={i} value={option}>
+//             {option}
+//           </option>
+//         ))}
+//       </select>
+//     </label>
+//   );
+// }
 
 function GlobalFilter({
   preGlobalFilteredRows,
@@ -163,7 +163,6 @@ const Index = ({ columns, data }) => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
     prepareRow,
 
     state,
@@ -283,6 +282,7 @@ const Index = ({ columns, data }) => {
                               {...cell.getCellProps()}
                               className="whitespace-nowrap px-5 py-4"
                               role="cell"
+                              key={i}
                             >
                               {cell.column.Cell.name === 'defaultRenderer' ? (
                                 <div className="text-left text-xs text-gray-500">
@@ -312,10 +312,18 @@ const Index = ({ columns, data }) => {
       {/* Pagination */}
       <div className="flex items-center justify-between py-3">
         <div className="flex flex-1 justify-between sm:hidden">
-          <Button onClick={() => previousPage()} disabled={!canPreviousPage}>
+          <Button
+            onClick={() => previousPage()}
+            disabled={!canPreviousPage}
+            className={``}
+          >
             Previous
           </Button>
-          <Button onClick={() => nextPage()} disabled={!canNextPage}>
+          <Button
+            onClick={() => nextPage()}
+            disabled={!canNextPage}
+            className={``}
+          >
             Next
           </Button>
         </div>
@@ -345,6 +353,7 @@ const Index = ({ columns, data }) => {
               <PageButton
                 onClick={() => previousPage()}
                 disabled={!canPreviousPage}
+                className={``}
               >
                 <span className="sr-only">Previous</span>
                 <ChevronLeftIcon
@@ -352,7 +361,11 @@ const Index = ({ columns, data }) => {
                   aria-hidden="true"
                 />
               </PageButton>
-              <PageButton onClick={() => nextPage()} disabled={!canNextPage}>
+              <PageButton
+                onClick={() => nextPage()}
+                disabled={!canNextPage}
+                className={``}
+              >
                 <span className="sr-only">Next</span>
                 <ChevronRightIcon
                   className="h-5 w-5 text-gray-700"

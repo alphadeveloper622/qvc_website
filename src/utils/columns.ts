@@ -1,11 +1,10 @@
-import { SelectColumnFilter } from '@/components/DataTable';
 import { NameCell, DetailCell } from '@/components/DataTable/DataTableCell';
 
 export const getColumns = () => [
   {
     Header: 'Name',
     accessor: 'name',
-    Filter: SelectColumnFilter,
+    // Filter: SelectColumnFilter,
     filter: 'includes',
     Cell: NameCell,
   },

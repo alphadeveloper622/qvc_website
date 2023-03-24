@@ -4,7 +4,7 @@ import Menu from '@/components/Menu';
 import { Section } from '@/layouts/Section';
 import { BorderDirections } from '@/utils/global';
 
-export default function Index({ className }) {
+export default function Index({ className }: { className?: string }) {
   return (
     <Section
       padding="py-[33px] md:px-[min(7vw,100px)] px-[5vw] pt-[18px] md:pt-[32px] "

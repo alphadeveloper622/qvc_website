@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { SearchButton } from '@/components/Button';
 import { selectCoinSearchState } from '@/store/slices/coinSearchSlice';
@@ -16,7 +16,6 @@ type ISearchFormProps = {
   className?: string;
 };
 const Index = (props: ISearchFormProps) => {
-  const dispatch = useDispatch();
   const coinSearchState = useSelector(selectCoinSearchState);
   // const handleSearchButton = () => {
   // if (coinSearchState) dispatch(setCoinSearchState(false));

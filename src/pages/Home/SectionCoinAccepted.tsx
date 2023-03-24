@@ -26,14 +26,22 @@ export default function SectionCoinAccepted() {
         <div className="w-full md:w-[50%] md:pr-[100px]">
           {Array.apply(0, Array(10)).map(function (x, i) {
             return (
-              <Paragraph key={i} name="All Half Cents" value="1793-1857" />
+              <Paragraph
+                key={i}
+                name={`All Half Cents${x}`}
+                value="1793-1857"
+              />
             );
           })}
         </div>
         <div className="w-full md:w-[50%]">
           {Array.apply(0, Array(10)).map(function (x, i) {
             return (
-              <Paragraph key={i} name="All Half Cents" value="1793-1857" />
+              <Paragraph
+                key={i}
+                name={`All Half Cents${x}`}
+                value="1793-1857"
+              />
             );
           })}
         </div>

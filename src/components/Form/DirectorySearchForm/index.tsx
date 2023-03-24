@@ -42,11 +42,11 @@ const Index = (props: ISearchFormProps) => {
         >
           <div className="mr-[2.6vw] w-full text-left desktop:mr-[38px]">
             <label
-              htmlFor={fields[0].id}
+              htmlFor={fields[0]?.id}
               // className="poppins400 text-[32px] md:text-[40px]"
               className="poppins700 text-[16px]"
             >
-              {fields[0].title}
+              {fields[0]?.title}
             </label>
             <label className="relative mt-[15px] block">
               <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -60,20 +60,20 @@ const Index = (props: ISearchFormProps) => {
               </span>
               <input
                 className="poppins400 block w-full border border-slate-300 bg-white py-2 pl-9 pr-3 text-sm placeholder-[#858585] shadow-sm placeholder:text-sm placeholder:italic focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                placeholder={fields[0].placeHolder}
+                placeholder={fields[0]?.placeHolder}
                 type="text"
-                name={fields[0].name}
-                id={fields[0].id}
+                name={fields[0]?.name}
+                id={fields[0]?.id}
               />
             </label>
           </div>
           <div className="mr-[2.6vw]  w-full text-left desktop:mr-[38px]">
             <label
-              htmlFor={fields[1].id}
+              htmlFor={fields[1]?.id}
               // className="poppins400 text-[32px] md:text-[40px]"
               className="poppins700 text-[16px]"
             >
-              {fields[1].title}
+              {fields[1]?.title}
             </label>
             <label className="relative mt-[15px] block">
               <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -87,22 +87,22 @@ const Index = (props: ISearchFormProps) => {
               </span>
               <select
                 className="poppins400 block w-full border border-slate-300 bg-white py-2 pl-9 pr-3 text-sm shadow-sm  focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                name={fields[1].name}
-                id={fields[1].id}
+                name={fields[1]?.name}
+                id={fields[1]?.id}
               >
-                <option>{fields[1].placeHolder}</option>
-                <option>{fields[1].placeHolder}</option>
-                <option>{fields[1].placeHolder}</option>
+                <option>{fields[1]?.placeHolder}</option>
+                <option>{fields[1]?.placeHolder}</option>
+                <option>{fields[1]?.placeHolder}</option>
               </select>
             </label>
           </div>
           <div className="w-full text-left">
             <label
-              htmlFor={fields[2].id}
+              htmlFor={fields[2]?.id}
               // className="poppins400 text-[32px] md:text-[40px]"
               className="poppins700 text-[16px]"
             >
-              {fields[2].title}
+              {fields[2]?.title}
             </label>
             <label className="relative mt-[15px] block">
               <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -116,10 +116,10 @@ const Index = (props: ISearchFormProps) => {
               </span>
               <input
                 className="poppins400 block w-full border border-slate-300 bg-white py-2 pl-9 pr-3 text-sm placeholder-[#858585] shadow-sm placeholder:text-sm placeholder:italic focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                placeholder={fields[2].placeHolder}
+                placeholder={fields[2]?.placeHolder}
                 type="text"
-                name={fields[2].name}
-                id={fields[2].id}
+                name={fields[2]?.name}
+                id={fields[2]?.id}
               />
             </label>
           </div>

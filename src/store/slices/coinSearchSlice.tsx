@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { HYDRATE } from 'next-redux-wrapper';
 
 const initialState = {
   searchState: false,
@@ -10,17 +9,18 @@ export const coinSearchSlice = createSlice({
   initialState,
   reducers: {
     setCoinSearchState(state, action) {
+      // eslint-disable-next-line no-param-reassign
       state.searchState = action.payload;
     },
 
-    extraReducers: {
-      [HYDRATE]: (state, action) => {
-        return {
-          ...state,
-          ...action.payload.auth,
-        };
-      },
-    },
+    // extraReducers: {
+    //   [HYDRATE]: (state, action) => {
+    //     return {
+    //       ...state,
+    //       ...action.payload.coinSearch,
+    //     };
+    //   },
+    // },
   },
 });
 
