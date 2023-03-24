@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 import 'regenerator-runtime/runtime';
 import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';

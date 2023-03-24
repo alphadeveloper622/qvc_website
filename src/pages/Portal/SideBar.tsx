@@ -27,7 +27,7 @@ const SideBar = ({ className }) => {
               <ul className="space-y-2 pb-2">
                 <li>
                   <Link
-                    href="/"
+                    href=""
                     className="poppins400 group flex items-center rounded-lg p-2 text-base text-white hover:bg-gray-600 "
                   >
                     <svg
@@ -62,7 +62,7 @@ const SideBar = ({ className }) => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href=""
                     className="poppins400 group flex items-center rounded-lg p-2 text-base text-white hover:bg-gray-600 "
                   >
                     <svg
@@ -81,7 +81,7 @@ const SideBar = ({ className }) => {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href=""
                     className="poppins400 group flex items-center rounded-lg p-2 text-base text-white hover:bg-gray-600 "
                   >
                     <svg

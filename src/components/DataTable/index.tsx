@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+/* eslint-disable react/jsx-key */
 import React, { useEffect } from 'react';
 
 import {
@@ -137,7 +139,8 @@ function GlobalFilter({
 }) {
   const count = preGlobalFilteredRows ? preGlobalFilteredRows.length : 0;
   const [value, setValue] = React.useState(globalFilter);
-  const onChange = useAsyncDebounce((value) => {
+  // eslint-disable-next-line @typescript-eslint/no-shadow
+  const onChange = useAsyncDebounce((value: any) => {
     setGlobalFilter(value || undefined);
   }, 200);
 
