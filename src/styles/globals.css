@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .poppins400{
+    font-family:var(--font-poppins);
+    font-weight:400;
+  }
+  .poppins500{
+    font-family:var(--font-poppins);
+    font-weight:500;
+  }
+  .poppins600{
+    font-family:var(--font-poppins);
+    font-weight:600;
+  }
+  .poppins700{
+    font-family:var(--font-poppins);
+    font-weight:700;
+  }
+}
