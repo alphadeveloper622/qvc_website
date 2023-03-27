@@ -274,18 +274,18 @@ const Index = ({ columns, data }) => {
                   {...getTableBodyProps()}
                   className="divide-y divide-gray-300 bg-white"
                 >
-                  {page.map((row, i) => {
+                  {page.map((row) => {
                     // new
                     prepareRow(row);
                     return (
                       <tr {...row.getRowProps()}>
-                        {row.cells.map((cell) => {
+                        {row.cells.map((cell, j) => {
                           return (
                             <td
                               {...cell.getCellProps()}
                               className="whitespace-nowrap px-5 py-4"
                               role="cell"
-                              key={i}
+                              key={j}
                             >
                               {cell.column.Cell.name === 'defaultRenderer' ? (
                                 <div className="text-left text-xs text-gray-500">

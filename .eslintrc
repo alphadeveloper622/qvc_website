@@ -79,7 +79,8 @@
         "unused-imports/no-unused-vars": [
           "error",
           { "argsIgnorePattern": "^_" }
-        ]
+        ],
+        "no-nested-ternary": "off"
       }
     }
   ]

@@ -6,7 +6,7 @@ import verifiedPic from '@@/images/verified.png';
 
 export default function SectionIntro() {
   return (
-    <Section>
+    <Section className="z-0">
       <div className="hidden pb-[118px]  md:flex md:pt-[139px]">
         <div className="poppins400 w-[59.79%] border-r border-solid border-[#979797] pr-[70px]">
           <div className="mb-[30px]">

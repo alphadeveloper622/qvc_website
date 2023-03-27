@@ -39,16 +39,16 @@ const Meta = () => {
         />
       </Head>
       {/* <NextSeo
-        title={props.title}
-        description={props.description}
-        canonical={props.canonical}
+        title={AppConfig.title}
+        description={AppConfig.description}
+        canonical={AppConfig.title}
         openGraph={{
-          title: props.title,
-          description: props.description,
-          url: props.canonical,
+          title: AppConfig.title,
+          description: AppConfig.description,
+          url: '',
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,
-        }}
+        }} 
       /> */}
     </>
   );

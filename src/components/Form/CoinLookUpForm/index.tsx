@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
-
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { SearchButton } from '@/components/Button';
-import { selectCoinSearchState } from '@/store/slices/coinSearchSlice';
+import {
+  selectCoinSearchState,
+  setCoinSearchState,
+} from '@/store/slices/coinSearchSlice';
 
 type IItem = {
   id: string;
@@ -17,19 +18,21 @@ type ISearchFormProps = {
 };
 const Index = (props: ISearchFormProps) => {
   const coinSearchState = useSelector(selectCoinSearchState);
-  // const handleSearchButton = () => {
-  // if (coinSearchState) dispatch(setCoinSearchState(false));
-  // else
-  // dispatch(setCoinSearchState(true));
-  // };
-  const handleSearchButton = useEffect(() => {
-    // if (coinSearchState) dispatch(setCoinSearchState(false));
-    // else dispatch(setCoinSearchState(true));
-  }, [coinSearchState]);
+  const dispatch = useDispatch();
+  const handleSearchButton = () => {
+    console.log(coinSearchState);
+    if (coinSearchState) dispatch(setCoinSearchState(false));
+    else dispatch(setCoinSearchState(true));
+  };
+  // const handleSearchButton = useEffect(() => {
+  //   // if (coinSearchState) dispatch(setCoinSearchState(false));
+  //   // else dispatch(setCoinSearchState(true));
+  // }, [coinSearchState]);
 
   return (
     <div className={`${props.className}`}>
-      <form className="relative w-full">
+      {/* <form className="relative w-full"> */}
+      <div className="relative w-full">
         {/* <div
           className={`relative flex flex-col bg-[#BB843D] px-[27px] pt-[16px] pb-[40px] md:flex-row md:justify-around md:px-[57px] md:pt-[29px] md:pb-[82px]`}
         > */}
@@ -73,7 +76,8 @@ const Index = (props: ISearchFormProps) => {
           className=""
           onClickHandle={handleSearchButton}
         />
-      </form>
+        {/* </form> */}
+      </div>
     </div>
   );
 };

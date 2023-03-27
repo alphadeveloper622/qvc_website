@@ -1,3 +1,4 @@
+import BugerMenu from '@/components/BugerMenu';
 import { RedFillRoundButton, WhiteFillRoundButton } from '@/components/Button';
 import Logo from '@/components/Logo';
 import Menu from '@/components/Menu';
@@ -15,8 +16,12 @@ export default function Index(props: IHeaderProps) {
       {...props}
     >
       <div className="flex flex-wrap items-center justify-between">
-        <Logo className="w-[136px] md:w-[247px]" />
-        <Menu className="hidden 2.5xl:flex" />
+        <div className={`flex flex-row`}>
+          <BugerMenu className="mr-2" />
+          <Logo className="w-[136px] md:w-[247px]" />
+        </div>
+        <Menu className="hidden header:flex" />
+        {/* 2.5xl:flex */}
         <div className="">
           <WhiteFillRoundButton
             title="request account"

@@ -1,4 +1,10 @@
+import { useSelector, useDispatch } from 'react-redux';
+
 import { SearchButton } from '@/components/Button';
+import {
+  selectDirectorySearchState,
+  setDirectorySearchState,
+} from '@/store/slices/directorySearchSlice';
 
 type IItem = {
   id: string;
@@ -30,10 +36,16 @@ const Index = (props: ISearchFormProps) => {
       placeHolder: 'Search by Dealer Name',
     },
   ];
-
+  const directroySearchState = useSelector(selectDirectorySearchState);
+  const dispatch = useDispatch();
+  const handleSearchButton = () => {
+    console.log(directroySearchState);
+    if (directroySearchState) dispatch(setDirectorySearchState(false));
+    else dispatch(setDirectorySearchState(true));
+  };
   return (
     <div className={`${props.className}`}>
-      <form className="relative w-full">
+      <div className="relative w-full">
         {/* <div
           className={`relative flex flex-col bg-[#BB843D] px-[27px] pt-[16px] pb-[40px] md:flex-row md:justify-around md:px-[57px] md:pt-[29px] md:pb-[82px]`}
         > */}
@@ -124,8 +136,12 @@ const Index = (props: ISearchFormProps) => {
             </label>
           </div>
         </div>
-        <SearchButton title="search" className="" />
-      </form>
+        <SearchButton
+          title="search"
+          className=""
+          onClickHandle={handleSearchButton}
+        />
+      </div>
     </div>
   );
 };

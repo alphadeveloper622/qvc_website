@@ -1,9 +1,16 @@
+// import Carousel from '@/components/Carousel';
 import Image from 'next/image';
+import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
+import { Carousel } from '@/components/Carousel';
 import { SearchForm } from '@/components/Form';
 import { Section } from '@/layouts/Section';
-import heroHomeMobilePic from '@@/images/hero-home-mobile.jpg';
-import heroHomePic from '@@/images/hero-home.jpg';
+import pic1 from '@@/images/home/carousel/carousel1.jpg';
+import pic2 from '@@/images/home/carousel/carousel2.jpg';
+import pic3 from '@@/images/home/carousel/carousel3.jpg';
+import pic4 from '@@/images/home/carousel/carousel4.jpg';
+import pic5 from '@@/images/home/carousel/carousel5.jpg';
+import heroHomeMobilePic from '@@/images/home/hero-home-mobile.jpg';
 
 type IItem = {
   id: string;
@@ -20,13 +27,30 @@ export default function Index() {
       placeHolder: 'Certification Number',
     },
   ];
+  const CarouselData = [
+    { image: pic1 },
+    { image: pic2 },
+    { image: pic3 },
+    { image: pic4 },
+    { image: pic5 },
+  ];
   return (
-    <Section padding="px-[0px] py-[0px]">
+    <Section padding="px-[0px] py-[0px]" className="z-10">
       <div className="hero-screen relative hidden md:block">
-        <Image
+        {/* <Image
           src={heroHomePic}
           alt="StacksBowers"
           className="aspect-[1440/616] w-full"
+        /> */}
+        <Carousel
+          data={CarouselData}
+          autoPlay={true}
+          rightItem={<FaArrowRight />}
+          leftItem={<FaArrowLeft />}
+          animationDuration={3}
+          headerTextType="black"
+          subTextType="white"
+          size="normal"
         />
         <div
           className={`poppins400 absolute top-[8vw] left-[8vw] text-white desktop:top-[115px] desktop:left-[115px]`}

@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+
 import {
   WhiteFillRoundButton,
   RedFillRoundButton,
@@ -7,12 +9,18 @@ import {
 } from '@/components/Button';
 import { HomeNewsCard, NewsStoryCard } from '@/components/Card';
 import CouponCard from '@/components/Card/CouponCard';
+import { Carousel } from '@/components/Carousel';
 import Copyright from '@/components/Copyright';
 import DataTable from '@/components/DataTable';
 import { SearchForm } from '@/components/Form';
 import Menu from '@/components/Menu';
 import { getColumns } from '@/utils/columns';
 import { getData } from '@/utils/sampleData';
+import pic1 from '@@/images/home/carousel/carousel1.jpg';
+import pic2 from '@@/images/home/carousel/carousel2.jpg';
+import pic3 from '@@/images/home/carousel/carousel3.jpg';
+import pic4 from '@@/images/home/carousel/carousel4.jpg';
+import pic5 from '@@/images/home/carousel/carousel5.jpg';
 
 type IItem = {
   id: string;
@@ -29,7 +37,13 @@ export default function Index() {
       placeHolder: 'Certification Number',
     },
   ];
-
+  const CarouselData = [
+    { image: pic1, name: 'pic1' },
+    { image: pic2 },
+    { image: pic3 },
+    { image: pic4 },
+    { image: pic5 },
+  ];
   const data = useMemo(() => getData(), []);
   const columns = useMemo(() => getColumns(), []);
   return (
@@ -66,23 +80,32 @@ export default function Index() {
         <NewsStoryCard className="m-auto" />
       </div>
       <div style={{ padding: '5px 0', marginTop: '30px' }}>
-        <div className="min-h-screen bg-gray-100 text-gray-900">
-          <main className="mx-auto max-w-4xl px-4 pt-4 sm:px-6 lg:px-8">
-            <div className="">
-              <h1 className="text-xl font-semibold">
-                React Table + Tailwind CSS = ❤
-              </h1>
-            </div>
-            <div className="mt-4">
-              <DataTable columns={columns} data={data} />
-            </div>
-          </main>
-        </div>
+        <main className="mx-auto max-w-4xl px-4 pt-4 sm:px-6 lg:px-8">
+          <div className="">
+            <h1 className="text-xl font-semibold">
+              React Table + Tailwind CSS = ❤
+            </h1>
+          </div>
+          <div className="mt-4">
+            <DataTable columns={columns} data={data} />
+          </div>
+        </main>
       </div>
-
-      <a href="#content" className=" not-sr-only focus:sr-only">
+      <div style={{ marginTop: '30px' }}>
+        <Carousel
+          data={CarouselData}
+          autoPlay={true}
+          rightItem={<FaArrowRight />}
+          leftItem={<FaArrowLeft />}
+          animationDuration={3}
+          headerTextType="black"
+          subTextType="white"
+          size="normal"
+        />
+      </div>
+      {/* <a href="#content" className=" not-sr-only focus:sr-only">
         Skip to content
-      </a>
+      </a> */}
     </div>
   );
 }

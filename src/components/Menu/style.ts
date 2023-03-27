@@ -26,7 +26,11 @@ export const navbarMobileClassFunc = className(
   'md:items-center',
   'md:text-base'
 );
-export const liMobileClassFunc = className('md:mb-0', 'md:mr-12');
+export const liMobileClassFunc = className(
+  'md:mb-0',
+  'md:mr-[3.3vw]',
+  'desktop:mr-[50px]'
+);
 // export const navbarMobileClassFunc = (prefix: string) => {
 //   return className(
 //     `${prefix}:flex-row`,

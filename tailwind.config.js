@@ -19,6 +19,7 @@ module.exports = {
         ssm: '500px',
         mobile: '499px',
         desktop: '1440px',
+        header: '1184px',
         // => @media (min-width: 1340px) { ... }
       },
       colors: {

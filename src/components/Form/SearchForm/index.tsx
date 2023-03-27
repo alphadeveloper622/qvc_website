@@ -13,7 +13,7 @@ type ISearchFormProps = {
 const Index = (props: ISearchFormProps) => {
   return (
     <div className={`${props.className}`}>
-      <form className="relative w-full">
+      <form className="relative w-full" action="/CoinLookUp">
         {/* <div
           className={`relative flex flex-col bg-[#BB843D] px-[27px] pt-[16px] pb-[40px] md:flex-row md:justify-around md:px-[57px] md:pt-[29px] md:pb-[82px]`}
         > */}
