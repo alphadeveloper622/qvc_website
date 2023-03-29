@@ -28,7 +28,7 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
     "noEmit": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "incremental": true,
     "baseUrl": ".",
     "paths": {

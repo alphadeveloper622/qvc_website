@@ -31,6 +31,12 @@ export const liMobileClassFunc = className(
   'md:mr-[3.3vw]',
   'desktop:mr-[50px]'
 );
+
+export const liActiveClassFunc = className(
+  'border-b',
+  'border-black',
+  'border-solid'
+);
 // export const navbarMobileClassFunc = (prefix: string) => {
 //   return className(
 //     `${prefix}:flex-row`,

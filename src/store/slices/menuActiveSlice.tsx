@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  menuActiveState: false,
+import { EMenuState } from '@/types/global';
+
+const initialState: DMenuState = {
+  menuActiveState: EMenuState.HOME,
 };
 
 export const menuActiveSlice = createSlice({
@@ -26,5 +28,5 @@ export const menuActiveSlice = createSlice({
 
 export const { setMenuActiveState } = menuActiveSlice.actions;
 export const selectMenuActiveState = (state) =>
-  state.menuActiveSlice.menuActiveState;
+  state.menuActive.menuActiveState;
 export default menuActiveSlice.reducer;
