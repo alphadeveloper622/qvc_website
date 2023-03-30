@@ -84,7 +84,7 @@ export function LiquiditySVG({ className }) {
 export default function SectionIntro() {
   return (
     <Section className="z-0">
-      <div className="hidden pb-[118px]  md:flex md:pt-[139px]">
+      <div className="hidden pb-[118px]  header:flex header:pt-[139px]">
         <div className="poppins400 w-[59.79%] border-r border-solid border-[#979797] pr-[70px]">
           <div className="mb-[30px]">
             <p className="mb-[18px] text-[40px]">
@@ -147,7 +147,7 @@ export default function SectionIntro() {
           </div>
         </div>
       </div>
-      <div className="pt-[27px]  md:hidden">
+      <div className="pt-[27px] md:pt-[139px] header:hidden">
         <div className="poppins400 w-[100%] px-[20px]">
           <div className="mb-[25px]">
             <p className="mb-[11px] text-[26px]">Coin Certification Services</p>
