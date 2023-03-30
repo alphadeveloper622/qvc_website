@@ -8,6 +8,7 @@ export const getColumns = () => [
     Header: 'Name',
     accessor: 'name',
     // Filter: SelectColumnFilter,
+
     filter: 'includes',
     Cell: NameCell,
   },
