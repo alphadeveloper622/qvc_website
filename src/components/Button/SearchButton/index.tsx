@@ -11,7 +11,7 @@ type IButtonProps = {
 const Index = (props: IButtonProps) => {
   return (
     <button
-      className={`${props.className} poppins400 block w-full cursor-pointer bg-[#A5221E] py-[16px] text-[20px] text-white md:absolute md:bottom-0 md:left-[50%] md:w-[19.7vw] md:translate-x-[-50%] md:translate-y-[50%] md:rounded-[4px] md:px-[3.19vw] md:text-[2vw] desktop:max-w-[284px] desktop:px-[45.9px] desktop:text-[28.8px]`}
+      className={`${props.className} poppins400 block w-full cursor-pointer bg-[#A5221E] py-[16px] text-[20px] text-white hover:bg-[#781b18] md:absolute md:bottom-0 md:left-[50%] md:w-[19.7vw] md:translate-x-[-50%] md:translate-y-[50%] md:rounded-[4px] md:px-[3.19vw] md:text-[2vw] desktop:max-w-[284px] desktop:px-[45.9px] desktop:text-[28.8px]`}
       onClick={props.onClickHandle}
     >
       {/* <div
