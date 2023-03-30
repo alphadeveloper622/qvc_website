@@ -12,12 +12,12 @@ export default function Index(props: IHeaderProps) {
   return (
     <Section
       padding="md:py-6 md:px-[45px] md:h-[125px] px-[20px] h-[90px] py-[15px]"
-      className=""
+      className="!max-w-full"
       borderDirection={BorderDirections.Bottom}
       borderColor="border-[#DADEE3]"
       {...props}
     >
-      <nav className="z-30 w-full border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
+      <nav className="z-30 w-full  bg-white dark:border-gray-700 dark:bg-gray-800">
         <div className="flex items-center justify-between">
           <div className="block items-center justify-start text-center md:flex">
             <Logo className="flex w-[136px] md:w-[247px]" />

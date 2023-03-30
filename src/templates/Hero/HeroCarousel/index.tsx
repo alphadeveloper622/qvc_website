@@ -53,7 +53,7 @@ export default function Index() {
           size="normal"
         />
         <div
-          className={`poppins400 absolute top-[8vw] left-[8vw] text-white desktop:top-[115px] desktop:left-[115px]`}
+          className={`poppins400 reveal-active fade-bottom absolute top-[8vw] left-[8vw] text-white desktop:top-[115px] desktop:left-[115px]`}
         >
           <div className="hero-title text-[30px] lg:text-[52px]">
             <p>Get your coins certified.</p>
@@ -84,7 +84,7 @@ export default function Index() {
       </div>
       <SearchForm
         fields={fields}
-        className="h-auto md:absolute md:bottom-0 md:w-[58.6%] md:translate-y-[35%]"
+        className="reveal-active fade h-auto md:absolute md:bottom-0 md:w-[58.6%] md:translate-y-[35%]"
       />
     </Section>
   );

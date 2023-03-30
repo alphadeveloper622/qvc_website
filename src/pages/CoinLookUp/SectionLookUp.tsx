@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { Section } from '@/layouts/Section';
-import coinPic from '@@/images/coin-lookup/coin-case.jpg';
+import coinPic from '@@/images/coin-lookup/coin-case.png';
 
 type ISectionLookUpProps = {
   className?: string;

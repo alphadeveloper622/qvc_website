@@ -8,9 +8,24 @@ export default function SectionNewsEvents() {
       title="News & Events"
     >
       <div className="block md:flex">
-        <HomeNewsCard screen="large" className="md:w-[50%]" />
-        <HomeNewsCard screen="small" className="md:w-[25%]" />
-        <HomeNewsCard screen="small" className="md:w-[25%]" />
+        <HomeNewsCard
+          screen="large"
+          className="reveal fade-left md:w-[50%]"
+          title="Lorem ipsum dolor sit amet"
+          subtitle="consectetur. Malesuada amet."
+        />
+        <HomeNewsCard
+          screen="small"
+          className="reveal fade-right md:w-[25%]"
+          title="Lorem ipsum dolor sit"
+          subtitle="amet consectetur."
+        />
+        <HomeNewsCard
+          screen="small"
+          className="reveal  fade-right md:w-[25%]"
+          title="Lorem ipsum dolor sit"
+          subtitle="amet consectetur."
+        />
       </div>
     </Section>
   );

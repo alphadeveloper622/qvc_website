@@ -17,7 +17,7 @@ export const liDeskClass = className(
   'last:mb-0',
   'mr-0',
   'last:mr-0',
-  'hover:border-b',
+  'hover:border-b-4',
   'hover:border-black',
   'hover:border-solid'
 );
@@ -33,7 +33,7 @@ export const liMobileClassFunc = className(
 );
 
 export const liActiveClassFunc = className(
-  'border-b',
+  'border-b-4',
   'border-black',
   'border-solid'
 );

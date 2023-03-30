@@ -10,6 +10,8 @@ import newsCardRightMobilePic from '@@/images/home/news_card_right_m.jpg';
 type IHomeNewsCardProps = {
   className?: string;
   screen?: string;
+  title?: string;
+  subtitle?: string;
 };
 
 const Index = (props: IHomeNewsCardProps) => {
@@ -21,12 +23,12 @@ const Index = (props: IHomeNewsCardProps) => {
           <Image
             src={newsCardRightDeskPic}
             alt="StacksBowers"
-            className="hidden min-h-[368px] object-cover md:block"
+            className="hidden min-h-[368px] object-cover transition-all duration-300 ease-in-out hover:opacity-80 md:block"
           />
           <Image
             src={newsCardRightMobilePic}
             alt="StacksBowers"
-            className="block md:hidden"
+            className="block transition-all duration-300 ease-in-out hover:opacity-80 md:hidden"
           />
         </>
       )}
@@ -35,19 +37,19 @@ const Index = (props: IHomeNewsCardProps) => {
           <Image
             src={newsCardLeftDeskPic}
             alt="StacksBowers"
-            className="hidden min-h-[368px] object-cover md:block"
+            className="hidden min-h-[368px]  object-cover transition-all duration-300 ease-in-out hover:opacity-80 md:block"
           />
           <Image
             src={newsCardLeftMobilePic}
             alt="StacksBowers"
-            className="block md:hidden"
+            className="block  transition-all duration-300 ease-in-out hover:opacity-80 md:hidden"
           />
         </>
       )}
       <div className="absolute bottom-[31px] ml-[28px] md:bottom-[25.76px] md:ml-[25.5px]">
-        <div className="poppins400 text-start text-[21px] text-white md:text-[17px] md:leading-[27.6px]">
-          <p>Lorem ipsum dolor sit amet</p>
-          <p>consectetur. Malesuada amet.</p>
+        <div className="poppins400 text-start text-[21px] text-white  md:text-[17px] md:leading-[27.6px] ">
+          <p>{props.title}</p>
+          <p>{props.subtitle}</p>
         </div>
         <RedFillRoundButton
           title="read story"

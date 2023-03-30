@@ -13,7 +13,7 @@ const SectionDirectorySearchResult = (props: ISectionLookUpResultProps) => {
   const columns = useMemo(() => getColumns(), []);
   return (
     <Section
-      padding={`${props.className} px-[27px] md:pt-[195px] pb-[116px] pt-[48px] md:px-[7%]`}
+      padding={`${props.className} px-[0px] md:pt-[195px] pb-[116px] pt-[48px] md:px-[7%]`}
       bgColor="bg-[#F5F5F5]"
     >
       <div className="m-auto w-full">

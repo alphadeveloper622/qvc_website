@@ -33,7 +33,7 @@ const EditSubmissionModal = (props, ref) => {
                       Edit Submission for 1100 - Stack’s Bowers
                     </h3>
                     <div className="poppins700 text-sm text-[#2D3546]">
-                      <select>
+                      <select className="p- border border-solid border-gray-500 p-2">
                         <option>Change Address</option>
                         <option>Change Address</option>
                         <option>Change Address</option>
@@ -170,6 +170,7 @@ const EditSubmissionModal = (props, ref) => {
                         onChange={() => {}}
                       />
                     </div>
+                    <div className="mr-2 flex flex-1 flex-col py-2"></div>
                   </div>
                   <div className="flex flex-col lg:flex-row">
                     <div className="mr-2 flex flex-1 flex-col py-2">

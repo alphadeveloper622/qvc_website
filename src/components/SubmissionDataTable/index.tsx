@@ -148,7 +148,13 @@ export function PageSingleButton({ children, className, ...rest }) {
 //   );
 // }
 
-function GlobalFilter({ globalFilter, setGlobalFilter }) {
+function GlobalFilter({
+  preGlobalFilteredRows,
+  globalFilter,
+  setGlobalFilter,
+}) {
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  const count = preGlobalFilteredRows ? preGlobalFilteredRows.length : 0;
   const [value, setValue] = React.useState(globalFilter);
   // eslint-disable-next-line @typescript-eslint/no-shadow
   const onChange = useAsyncDebounce((value: any) => {
@@ -183,7 +189,6 @@ const Index = ({ columns, data }) => {
 
     state,
 
-    // eslint-disable-next-line unused-imports/no-unused-vars
     preGlobalFilteredRows,
     setGlobalFilter,
 
@@ -213,7 +218,7 @@ const Index = ({ columns, data }) => {
 
   return (
     <>
-      <div className="flex justify-between gap-x-2 border border-gray-300 bg-white px-5 py-4">
+      <div className="sr-only flex justify-between gap-x-2 border border-gray-300 bg-white px-5 py-4">
         <label className="flex items-center">
           <span className="poppins400 mt-[5px] mr-3 text-[13px]">Show</span>
           <select
@@ -232,7 +237,7 @@ const Index = ({ columns, data }) => {
           <span className="poppins400 mt-[5px] ml-3 text-[13px]">entries</span>
         </label>
         <GlobalFilter
-          // preGlobalFilteredRows={preGlobalFilteredRows}
+          preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={state.globalFilter}
           setGlobalFilter={setGlobalFilter}
         />
@@ -258,7 +263,7 @@ const Index = ({ columns, data }) => {
                 <thead className="bg-[#3C80BB]/20 ">
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
-                      {headerGroup.headers.map((column, index) => (
+                      {headerGroup.headers.map((column) => (
                         <th
                           scope="col"
                           className="Poppins700 group px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
@@ -266,24 +271,20 @@ const Index = ({ columns, data }) => {
                             column.getSortByToggleProps()
                           )}
                         >
-                          {index !== headerGroup.headers.length - 1 ? (
-                            <div className="flex items-center">
-                              {column.render('Header')}
-                              <span className="ml-2">
-                                {column.isSorted ? (
-                                  column.isSortedDesc ? (
-                                    <SortDownIcon className="h-4 w-4 text-black" />
-                                  ) : (
-                                    <SortUpIcon className="h-4 w-4 text-black" />
-                                  )
+                          <div className="flex items-center">
+                            {column.render('Header')}
+                            <span className="ml-2">
+                              {column.isSorted ? (
+                                column.isSortedDesc ? (
+                                  <SortDownIcon className="h-4 w-4 text-black" />
                                 ) : (
-                                  <SortIcon className="h-4 w-4 text-black" />
-                                )}
-                              </span>
-                            </div>
-                          ) : (
-                            ''
-                          )}
+                                  <SortUpIcon className="h-4 w-4 text-black" />
+                                )
+                              ) : (
+                                <SortIcon className="h-4 w-4 text-black" />
+                              )}
+                            </span>
+                          </div>
                         </th>
                       ))}
                     </tr>
@@ -361,7 +362,7 @@ const Index = ({ columns, data }) => {
           </div>
           <div>
             <nav
-              className="relative z-0 inline-flex -space-x-px md:mr-[40px]"
+              className="sr-only relative z-0 inline-flex -space-x-px md:mr-[40px]"
               aria-label="Pagination"
             >
               <PageButton

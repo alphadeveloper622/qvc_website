@@ -25,7 +25,7 @@ export default function Index(props: IHeaderProps) {
         <div className="">
           <WhiteFillRoundButton
             title="request account"
-            className="mr-[22px] hidden md:inline-block"
+            className="mr-[22px] hidden md:inline-block "
           />
           <RedFillRoundButton title="portal login" />
         </div>

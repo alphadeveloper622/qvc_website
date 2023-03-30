@@ -69,8 +69,10 @@ const Section = (props: ISectionProps) => (
     {(props.title || props.description) && (
       <div
         className={`mb-[min(3.5vw,53px)] ${
-          props.titleAlign ? props.titleAlign : 'text-center'
-        }`}
+          props.titleAlign
+            ? `${props.titleAlign} reveal-active fade-left`
+            : 'reveal fade-left text-center'
+        } `}
       >
         {props.title && (
           <h2 className="poppins400 tex-black text-[28px] md:text-[40px]">

@@ -15,7 +15,7 @@ const Index = () => {
       <Header />
       <HeroCoinLookUp className="z-0" />
       {!coinSearchState ? (
-        <SectionLookUp className="-z-10" />
+        <SectionLookUp className="reveal fade -z-10" />
       ) : (
         <SectionLookUpResult className="-z-10" />
       )}

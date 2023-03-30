@@ -15,9 +15,9 @@ const Index = () => {
       <Header />
       <HeroDirectorySearch className="z-[1]" />
       {!directorySearchState ? (
-        <SectionDirectorySearch className="z-0" />
+        <SectionDirectorySearchResult className="z-0 " />
       ) : (
-        <SectionDirectorySearchResult className="z-0" />
+        <SectionDirectorySearch className="z-0" />
       )}
 
       <Footer className={``} />

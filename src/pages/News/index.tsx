@@ -14,8 +14,11 @@ const Index = () => {
         borderDirection={BorderDirections.Bottom}
       />
       <HeroNews />
-      <SectionStory className="hidden md:mt-[35px] lg:block" />
-      <SectionStory className="hidden md:mt-[35px] lg:block" reverse={true} />
+      <SectionStory className="reveal fade-left hidden md:mt-[35px] lg:block" />
+      <SectionStory
+        className="reveal fade-right hidden md:mt-[35px] lg:block"
+        reverse={true}
+      />
       <SectionStoryList className="mt-[35px]" />
       <Footer />
     </>

@@ -86,7 +86,7 @@ export default function SectionIntro() {
     <Section className="z-0">
       <div className="hidden pb-[118px]  header:flex header:pt-[139px]">
         <div className="poppins400 w-[59.79%] border-r border-solid border-[#979797] pr-[70px]">
-          <div className="mb-[30px]">
+          <div className="reveal fade-bottom mb-[30px]">
             <p className="mb-[18px] text-[40px]">
               Our Rigorous Market Standards
             </p>
@@ -98,7 +98,7 @@ export default function SectionIntro() {
               CMQ sticker.
             </p>
           </div>
-          <div>
+          <div className="reveal fade-bottom ">
             <p className="mb-[10px] text-[28px]">
               A CMQ Sticker Elevates Your Coin From the Rest
             </p>
@@ -117,7 +117,7 @@ export default function SectionIntro() {
           </div>
         </div>
         <div className="poppins400 flex w-[40.21%] pl-[5px]">
-          <div className="text-center">
+          <div className="reveal fade-right ml-[15px] text-center">
             <Image
               src={verifiedPic}
               alt="StacksBowers"
@@ -127,11 +127,11 @@ export default function SectionIntro() {
             />
             <p className="mb-[9px] text-[24px]">Verified</p>
             <p className="text-[14px] text-[#52565E]">
-              Your coin has been verified as meeting the standard for strict
-              quality within its grade.
+              A CMQ sticker means your coin has been qualified by meeting our
+              strict quality standards for grade and eye appeal.
             </p>
           </div>
-          <div className="text-center">
+          <div className="reveal fade-right ml-[30px] text-center">
             <Image
               src={liquidityPic}
               alt="StacksBowers"
@@ -141,8 +141,9 @@ export default function SectionIntro() {
             />
             <p className="mb-[9px] text-[24px]">Added Liquidity</p>
             <p className="text-[14px] text-[#52565E]">
-              Stacks Bowers stands behind our verification, facilitating active
-              trading.
+              David Hall Rare Coins and Stack’s Bowers Galleries make markets in
+              all CMQ coins, resulting in higher market prices and added
+              liquidity.
             </p>
           </div>
         </div>

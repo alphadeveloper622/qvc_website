@@ -1,7 +1,7 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 
 export function NameCell({ value }) {
-  return <span className={`float-left text-[#3C80BB]`}>{value}</span>;
+  return <span className={`float-left text-black`}>{value}</span>;
 }
 export function DetailCell() {
   return (

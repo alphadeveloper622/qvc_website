@@ -42,7 +42,7 @@ const Index = (props: IMenuProps) => {
         <li
           className={`${liDeskClass} ${liMobileClassFunc} ${
             menuActive === EMenuState.HOME ? liActiveClassFunc : ''
-          }`}
+          } `}
           onClick={() => {
             onClickHandle(EMenuState.HOME);
           }}

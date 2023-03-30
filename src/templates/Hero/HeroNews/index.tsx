@@ -37,13 +37,13 @@ const Index = (props: IHeroNewsProps) => {
         <div
           className={`poppins400 absolute top-1/2 m-auto ml-[7.1%]  w-[calc(100%-15%)] -translate-y-1/2 text-white xl:w-[calc(50%-1%)]`}
         >
-          <div className="mb-[5px] text-[16px]">
+          <div className="reveal-active fade-left mb-[5px] text-[16px]">
             <p>{date}</p>
           </div>
-          <div className="mb-[19px] text-[26px] leading-[32.76px] lg:text-[36px] lg:leading-[51px]">
+          <div className="reveal-active fade-left mb-[19px] text-[26px] leading-[32.76px] lg:text-[36px] lg:leading-[51px]">
             <p>{title}</p>
           </div>
-          <div className="mb-[12px] text-[16px] leading-[23px] lg:text-[18px] lg:leading-[27px]">
+          <div className="reveal-active fade-bottom mb-[12px] text-[16px] leading-[23px] lg:text-[18px] lg:leading-[27px]">
             <p>{description}</p>
           </div>
           <RedFillRoundButton title="read story" link="/NewsDetail" />

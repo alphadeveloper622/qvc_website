@@ -14,14 +14,26 @@ export default function SectionCoupon() {
       className="h-[calc(798px+100px)] pt-[40px] text-white md:h-[625px] md:pt-[65px]"
     >
       <div className="mt-[32px] text-center md:mt-[45px] md:flex md:justify-evenly md:px-[100px]">
-        <CouponCard className="mx-auto mt-[15px] md:m-[5px] " />
-        <CouponCard className="mx-auto mt-[15px] md:m-[5px] " />
-        <CouponCard className="mx-auto mt-[15px] md:m-[5px] " />
+        <CouponCard
+          className="reveal fade-left mx-auto  mt-[15px] md:m-[5px]"
+          price="16"
+          title="TIRE 1"
+        />
+        <CouponCard
+          className="reveal fade-bottom mx-auto mt-[15px] md:m-[5px]"
+          price="35"
+          title="TIRE 2"
+        />
+        <CouponCard
+          className="reveal fade-right mx-auto mt-[15px] md:m-[5px]"
+          price="75"
+          title="TIRE 3"
+        />
       </div>
       <RedFillButton
         title="Do your coins qualify?"
         subtitle="Request an account."
-        className="absolute bottom-0  m-auto translate-y-0 md:translate-y-[50%]"
+        className="reveal fade absolute  bottom-0 z-50 m-auto translate-y-0 md:translate-y-[50%]"
       />
     </Section>
   );

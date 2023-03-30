@@ -10,12 +10,12 @@ export default function Index({ className }: { className?: string }) {
       padding="py-[33px] md:px-[min(7vw,100px)] px-[5vw] pt-[18px] md:pt-[32px] "
       borderColor="border-[#DADEE3]"
       borderDirection={BorderDirections.Top}
-      className={`${className}`}
+      className={`${className} reveal fade-bottom `}
     >
-      <div className="lg:relative">
+      <div className="lg:relative ">
         <Logo className="w-[193px]" />
         <Menu
-          className=" static mt-[25px] lg:absolute lg:left-[50%] lg:top-[50%] lg:mt-0 lg:translate-x-[-50%] lg:translate-y-[-50%]"
+          className="static mt-[25px] lg:absolute lg:left-[50%] lg:top-[50%] lg:mt-0  lg:translate-x-[-50%] lg:translate-y-[-50%]"
           screen="lg"
         />
       </div>

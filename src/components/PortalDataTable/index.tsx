@@ -86,7 +86,7 @@ export function PageButton({ children, className, ...rest }) {
       //   className
       // )}
       className={classNames(
-        'poppins400 relative inline-flex items-center bg-[#F5F5F5] px-2 py-2 text-sm font-medium text-[#3C80BB] disabled:text-[#DADEE3]',
+        'poppins400 relative inline-flex items-center bg-[#f9fafb] px-2 py-2 text-sm font-medium text-[#3C80BB] disabled:text-[#DADEE3]',
         className
       )}
       {...rest}
@@ -104,7 +104,7 @@ export function PageSingleButton({ children, className, ...rest }) {
       //   className
       // )}
       className={classNames(
-        'poppins400 relative inline-flex items-center bg-[#F5F5F5] px-2 py-2 text-sm font-medium text-[#2D3546] ',
+        'poppins400 relative inline-flex items-center bg-[#f9fafb] px-2 py-2 text-sm font-medium text-[#2D3546] ',
         className
       )}
       {...rest}
@@ -148,7 +148,13 @@ export function PageSingleButton({ children, className, ...rest }) {
 //   );
 // }
 
-function GlobalFilter({ globalFilter, setGlobalFilter }) {
+function GlobalFilter({
+  preGlobalFilteredRows,
+  globalFilter,
+  setGlobalFilter,
+}) {
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  const count = preGlobalFilteredRows ? preGlobalFilteredRows.length : 0;
   const [value, setValue] = React.useState(globalFilter);
   // eslint-disable-next-line @typescript-eslint/no-shadow
   const onChange = useAsyncDebounce((value: any) => {
@@ -183,7 +189,6 @@ const Index = ({ columns, data }) => {
 
     state,
 
-    // eslint-disable-next-line unused-imports/no-unused-vars
     preGlobalFilteredRows,
     setGlobalFilter,
 
@@ -213,26 +218,41 @@ const Index = ({ columns, data }) => {
 
   return (
     <>
-      <div className="flex justify-between gap-x-2 border border-gray-300 bg-white px-5 py-4">
-        <label className="flex items-center">
-          <span className="poppins400 mt-[5px] mr-3 text-[13px]">Show</span>
-          <select
-            className="block w-full border border-[#DADEE3]"
-            value={state.pageSize}
-            onChange={(e) => {
-              setPageSize(Number(e.target.value));
-            }}
-          >
-            {[5, 10, 20].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                {pageSize}
-              </option>
-            ))}
-          </select>
-          <span className="poppins400 mt-[5px] ml-3 text-[13px]">entries</span>
-        </label>
+      <div className="flex justify-between gap-x-2 border border-gray-300 bg-white px-5 py-4 md:mb-[26px]">
+        <div className="flex">
+          <label className="flex items-center">
+            <span className="poppins400 mt-[5px] mr-3 text-[13px]">Show</span>
+            <select
+              className="block w-full border border-[#DADEE3]"
+              value={state.pageSize}
+              onChange={(e) => {
+                setPageSize(Number(e.target.value));
+              }}
+            >
+              {[5, 10, 20].map((pageSize) => (
+                <option key={pageSize} value={pageSize}>
+                  {pageSize}
+                </option>
+              ))}
+            </select>
+            <span className="poppins400 mt-[5px] ml-3 text-[13px]">
+              entries
+            </span>
+          </label>
+          <label className="ml-[40px] flex items-center">
+            <span className="poppins400 mt-[5px] mr-3 whitespace-nowrap text-[13px]">
+              Show Account
+            </span>
+            <select className="block w-full w-[145px] border border-[#DADEE3]">
+              <option>All</option>
+            </select>
+            <span className="poppins400 mt-[5px] ml-3 whitespace-nowrap text-[13px]  text-[#3C80BB]">
+              Refresh results
+            </span>
+          </label>
+        </div>
         <GlobalFilter
-          // preGlobalFilteredRows={preGlobalFilteredRows}
+          preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={state.globalFilter}
           setGlobalFilter={setGlobalFilter}
         />
@@ -297,7 +317,7 @@ const Index = ({ columns, data }) => {
                     // new
                     prepareRow(row);
                     return (
-                      <tr {...row.getRowProps()} className=" hover:bg-gray-50">
+                      <tr {...row.getRowProps()} className="hover:bg-gray-50">
                         {row.cells.map((cell, j) => {
                           return (
                             <td
@@ -361,7 +381,7 @@ const Index = ({ columns, data }) => {
           </div>
           <div>
             <nav
-              className="relative z-0 inline-flex -space-x-px md:mr-[40px]"
+              className="relative z-0 inline-flex -space-x-px"
               aria-label="Pagination"
             >
               <PageButton

@@ -10,7 +10,7 @@ const Index = () => {
       <div className="fixed z-30 w-full bg-white">
         <PortalHeader />
       </div>
-      <div className="relative m-auto block max-w-[1440px] overflow-hidden bg-gray-50 pt-[90px]  dark:bg-gray-900 md:pt-[125px] lg:flex">
+      <div className="relative m-auto block max-w-full overflow-hidden bg-gray-50 pt-[90px]  dark:bg-gray-900 md:pt-[125px] lg:flex">
         <SideBar className={`lg:pt-[125px]`} />
         <MainBoard className={``} title="Open Submissions" />
       </div>

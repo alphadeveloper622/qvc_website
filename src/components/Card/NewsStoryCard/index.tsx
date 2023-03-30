@@ -9,6 +9,7 @@ type INewsStoryCardProps = {
   date?: string;
   summary?: string;
   link?: string;
+  prFlag?: boolean;
 };
 
 const Index = (props: INewsStoryCardProps) => {
@@ -25,18 +26,21 @@ const Index = (props: INewsStoryCardProps) => {
         <Image
           src={storyCardDeskPic}
           alt="StacksBowers"
-          className="hidden w-full md:block"
+          className="hidden w-full transition-all duration-300 ease-in-out hover:opacity-60 md:block"
         />
         <Image
           src={storyCardMobilePic}
           alt="StacksBowers"
-          className="block w-full md:hidden"
+          className="block w-full transition-all duration-300 ease-in-out hover:opacity-60 md:hidden"
         />
       </div>
       <div className="poppins400 h-1/2 pt-[10px] text-left">
         <p className="mb-[4px] text-[13px]">{date}</p>
         <p className="mb-[15px] text-[16px] leading-[24px]">{summary}</p>
-        <Link href={link} className="text-[14px] text-[#A5221E]">
+        <Link
+          href={link}
+          className="animate-bounce text-[14px] text-[#A5221E] transition-all duration-300 ease-in-out hover:text-[16px] hover:text-[#781b18]"
+        >
           READ STORY
         </Link>
       </div>

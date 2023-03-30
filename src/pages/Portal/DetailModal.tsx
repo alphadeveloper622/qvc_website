@@ -1,9 +1,9 @@
 /* eslint-disable unused-imports/no-unused-vars */
 import React, { forwardRef, useImperativeHandle, useMemo } from 'react';
 
-import DataTable from '@/components/DataTable';
-import { getColumns } from '@/utils/columns';
-import { getData } from '@/utils/sampleData';
+import DataTable from '@/components/SubmissionDataTable';
+import { getColumns } from '@/utils/columnsSubmission';
+import { getData } from '@/utils/sampleSubmissionData';
 
 const DetailModal = (props, ref) => {
   const [showModal, setShowModal] = React.useState(false);
@@ -31,7 +31,7 @@ const DetailModal = (props, ref) => {
       {showModal ? (
         <>
           <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none focus:outline-none">
-            <div className="relative my-6 mx-auto mt-36 h-full w-screen max-w-3xl px-5 md:mt-52 md:px-0">
+            <div className="relative my-6 mx-auto mt-36 h-full w-screen max-w-[1100px] px-5 md:mt-52 md:px-0">
               {/* content */}
               <div className="relative flex w-full flex-col border-0 bg-white shadow-lg outline-none focus:outline-none">
                 {/* header */}
@@ -53,19 +53,28 @@ const DetailModal = (props, ref) => {
                     </tbody>
                   </table>
 
-                  <div>
+                  <div className="flex flex-col">
                     <button
                       className="float-right ml-auto border-0 bg-transparent p-1 text-3xl font-semibold leading-none text-black  outline-none focus:outline-none"
                       onClick={() => setShowModal(false)}
                     >
-                      <span className="block h-6 w-6 bg-transparent text-2xl text-black outline-none focus:outline-none">
+                      <span className="block h-6 w-6 bg-transparent text-4xl text-black outline-none focus:outline-none">
                         ×
                       </span>
                     </button>
+                    <label className="mt-[20px] flex items-baseline gap-x-2 ">
+                      <span className="poppins400 mr-[17px] text-[13px] text-black">
+                        Search
+                      </span>
+                      <input
+                        type="text"
+                        className="mt-1 block w-full border border-solid border-[#DADEE3] bg-white"
+                      />
+                    </label>
                   </div>
                 </div>
                 {/* body */}
-                <div className="relative flex-auto px-6">
+                <div className="relative flex-auto px-6 pt-[20px]">
                   <DataTable columns={columns} data={data} />
                 </div>
               </div>

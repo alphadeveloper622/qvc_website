@@ -11,19 +11,19 @@ const SectionStoryList = (props: ISectionStoryListProps) => {
     >
       <div className="md:flex md:justify-between">
         <NewsStoryCard
-          className="my-[33px] mx-auto w-full md:my-0"
+          className="reveal fade-bottom my-[33px]  mx-auto w-full md:my-0 md:mr-[27px]"
           link="/NewsDetail"
         />
         <NewsStoryCard
-          className="my-[33px] mx-auto w-full md:my-0"
+          className="reveal fade-bottom form1 my-[33px] mx-auto w-full md:my-0 md:mr-[27px]"
           link="/NewsDetail"
         />
         <NewsStoryCard
-          className="my-[33px] mx-auto w-full md:my-0"
+          className="reveal fade-bottom form2 my-[33px] mx-auto w-full md:my-0 md:mr-[27px]"
           link="/NewsDetail"
         />
         <NewsStoryCard
-          className="my-[33px] mx-auto w-full md:my-0"
+          className="reveal fade-bottom form3 my-[33px] mx-auto w-full md:my-0"
           link="/NewsDetail"
         />
       </div>
