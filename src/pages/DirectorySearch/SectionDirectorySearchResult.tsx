@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import DataTable from '@/components/DataTable';
+import MobileDataTable from '@/components/MobileDataTable';
 import { Section } from '@/layouts/Section';
 import { getColumns } from '@/utils/columns';
 import { getData } from '@/utils/sampleData';
@@ -17,7 +18,12 @@ const SectionDirectorySearchResult = (props: ISectionLookUpResultProps) => {
       bgColor="bg-[#F5F5F5]"
     >
       <div className="m-auto w-full">
-        <DataTable columns={columns} data={data} />
+        <div className={`hidden md:block`}>
+          <DataTable columns={columns} data={data} className={``} />
+        </div>
+        <div className={`block md:hidden`}>
+          <MobileDataTable columns={columns} data={data} className={``} />
+        </div>
       </div>
     </Section>
   );

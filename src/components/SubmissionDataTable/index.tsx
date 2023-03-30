@@ -180,7 +180,7 @@ function GlobalFilter({
   );
 }
 
-const Index = ({ columns, data }) => {
+const Index = ({ columns, data, className }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -218,7 +218,9 @@ const Index = ({ columns, data }) => {
 
   return (
     <>
-      <div className="sr-only flex justify-between gap-x-2 border border-gray-300 bg-white px-5 py-4">
+      <div
+        className={`sr-only flex justify-between gap-x-2 border border-gray-300 bg-white px-5 py-4 ${className}`}
+      >
         <label className="flex items-center">
           <span className="poppins400 mt-[5px] mr-3 text-[13px]">Show</span>
           <select

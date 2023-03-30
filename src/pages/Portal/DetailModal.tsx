@@ -75,7 +75,11 @@ const DetailModal = (props, ref) => {
                 </div>
                 {/* body */}
                 <div className="relative flex-auto px-6 pt-[20px]">
-                  <DataTable columns={columns} data={data} />
+                  <DataTable
+                    columns={columns}
+                    data={data}
+                    className={`hidden md:block`}
+                  />
                 </div>
               </div>
             </div>

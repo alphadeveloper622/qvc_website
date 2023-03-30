@@ -150,7 +150,7 @@ export default function SectionIntro() {
       </div>
       <div className="pt-[27px] md:pt-[139px] header:hidden">
         <div className="poppins400 w-[100%] px-[20px]">
-          <div className="mb-[25px]">
+          <div className="reveal fade-left mb-[25px]">
             <p className="mb-[11px] text-[26px]">Coin Certification Services</p>
             <p className="text-[13px] text-[#52565E]">
               Lorem ipsum dolor sit amet consectetur. Pharetra et feugiat
@@ -158,7 +158,7 @@ export default function SectionIntro() {
               lobortis dignissim eu iaculis arcu lectus venenatis.
             </p>
           </div>
-          <div>
+          <div className=" reveal fade-right">
             <p className="mb-[11px] text-[18px]">
               What does the Stacks Bowers sticker mean?
             </p>
@@ -170,7 +170,7 @@ export default function SectionIntro() {
           </div>
         </div>
         <div className="poppins400 w-[100%]">
-          <div className="mt-[33px] mb-[33px] text-center">
+          <div className="reveal fade-left mt-[33px] mb-[33px] text-center">
             <VerifiedSVG className="mx-auto mb-[14px]" />
             <p className="mb-[4px] text-[20px]">Verified</p>
             <p className="px-[98px] text-[12px] text-[#52565E]">
@@ -178,7 +178,7 @@ export default function SectionIntro() {
               quality within its grade.
             </p>
           </div>
-          <div className="text-center">
+          <div className="reveal fade-right text-center">
             <LiquiditySVG className="mx-auto mb-[22px]" />
             <p className="mb-[4px] text-[20px]">Added Liquidity</p>
             <p className="px-[98px] pb-[86px] text-[12px]  text-[#52565E]">
