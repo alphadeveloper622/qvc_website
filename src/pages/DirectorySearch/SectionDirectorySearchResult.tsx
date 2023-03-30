@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
 
-import DataTable from '@/components/DataTable';
-import MobileDataTable from '@/components/MobileDataTable';
+import {
+  DicSearchDataTable,
+  MDicSearchDataTable,
+} from '@/components/DataTable';
+import { getColumns } from '@/components/DataTable/DicSearchDataTable/columns';
+import { getData } from '@/components/DataTable/DicSearchDataTable/sampleData';
 import { Section } from '@/layouts/Section';
-import { getColumns } from '@/utils/columns';
-import { getData } from '@/utils/sampleData';
 
 type ISectionLookUpResultProps = {
   className?: string;
@@ -19,10 +21,10 @@ const SectionDirectorySearchResult = (props: ISectionLookUpResultProps) => {
     >
       <div className="m-auto w-full">
         <div className={`hidden md:block`}>
-          <DataTable columns={columns} data={data} className={``} />
+          <DicSearchDataTable columns={columns} data={data} className={``} />
         </div>
         <div className={`block md:hidden`}>
-          <MobileDataTable columns={columns} data={data} className={``} />
+          <MDicSearchDataTable columns={columns} data={data} className={``} />
         </div>
       </div>
     </Section>

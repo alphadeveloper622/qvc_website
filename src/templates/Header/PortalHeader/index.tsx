@@ -1,12 +1,15 @@
-import { EnvelopeIcon } from '@heroicons/react/20/solid';
+import { HiOutlineMail } from 'react-icons/hi';
 
 import Logo from '@/components/Logo';
 import { Section } from '@/layouts/Section';
-import { BorderDirections } from '@/utils/global';
+import { BorderDirections } from '@/types/global';
 
 type IHeaderProps = {
   borderColor?: string;
   borderDirection?: BorderDirections;
+};
+export const WhiteEnvelopSVG = () => {
+  return <div></div>;
 };
 export default function Index(props: IHeaderProps) {
   return (
@@ -34,10 +37,7 @@ export default function Index(props: IHeaderProps) {
                 aria-expanded="false"
                 data-dropdown-toggle="dropdown-2"
               >
-                <EnvelopeIcon
-                  className="h-5 w-5 text-black"
-                  aria-hidden="true"
-                />
+                <HiOutlineMail className="h-7 w-7" aria-hidden="true" />
                 <span className="poppins400 mr-1 self-center text-xs">
                   Contact Us
                 </span>
@@ -118,11 +118,14 @@ export default function Index(props: IHeaderProps) {
                 <span className="poppins400 mr-1 self-center text-xs">
                   Welcome Lisa
                 </span>
-                <img
+                <span className="poppins700 avatar h-[40px] w-[40px] rounded-[20px] bg-[#BB843D] pt-[4px] text-center text-[20px] text-white">
+                  L
+                </span>
+                {/* <img
                   className="h-8 w-8 rounded-full"
                   src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                   alt="user photo"
-                />
+                /> */}
               </button>
               <div
                 className="z-50 my-4 hidden list-none divide-y divide-gray-100 rounded bg-white text-base shadow dark:divide-gray-600 dark:bg-gray-700"

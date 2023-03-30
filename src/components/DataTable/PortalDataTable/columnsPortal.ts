@@ -1,7 +1,7 @@
 import {
   NameCell,
   DetailCell,
-} from '@/components/PortalDataTable/DataTableCell';
+} from '@/components/DataTable/PortalDataTable/DataTableCell';
 
 export const getColumns = () => [
   {

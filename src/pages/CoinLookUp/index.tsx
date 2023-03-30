@@ -2,7 +2,7 @@ import { connect, useSelector } from 'react-redux';
 
 import { selectCoinSearchState } from '@/store/slices/coinSearchSlice';
 import Footer from '@/templates/Footer';
-import Header from '@/templates/Header';
+import Header from '@/templates/Header/CommonHeader';
 import { HeroCoinLookUp } from '@/templates/Hero';
 
 import SectionLookUp from './SectionLookUp';

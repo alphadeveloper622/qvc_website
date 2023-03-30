@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { RedFillRoundButton } from '@/components/Button';
-import { ButtonTypes } from '@/utils/global';
+import { ButtonTypes } from '@/types/global';
 import newsCardLeftDeskPic from '@@/images/home/news_card_left_d.jpg';
 import newsCardLeftMobilePic from '@@/images/home/news_card_left_m.jpg';
 import newsCardRightDeskPic from '@@/images/home/news_card_right_d.jpg';

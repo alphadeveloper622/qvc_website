@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { CoinLookUpForm } from '@/components/Form';
 import { Section } from '@/layouts/Section';
-import { IItem } from '@/utils/global';
+import { IItem } from '@/types/global';
 import heroMobilePic from '@@/images/coin-lookup/hero-coin-lookup-m.jpg';
 import heroPic from '@@/images/coin-lookup/hero-coin-lookup.jpg';
 

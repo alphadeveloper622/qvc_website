@@ -1,9 +1,14 @@
 /* eslint-disable unused-imports/no-unused-vars */
 import React, { forwardRef, useImperativeHandle, useMemo } from 'react';
 
-import DataTable from '@/components/SubmissionDataTable';
-import { getColumns } from '@/utils/columnsSubmission';
-import { getData } from '@/utils/sampleSubmissionData';
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
+
+import {
+  MSubmissionDataTable,
+  SubmissionDataTable,
+} from '@/components/DataTable';
+import { getColumns } from '@/components/DataTable/SubmissionDataTable/columnsSubmission';
+import { getData } from '@/components/DataTable/SubmissionDataTable/sampleSubmissionData';
 
 const DetailModal = (props, ref) => {
   const [showModal, setShowModal] = React.useState(false);
@@ -62,7 +67,7 @@ const DetailModal = (props, ref) => {
                         ×
                       </span>
                     </button>
-                    <label className="mt-[20px] flex items-baseline gap-x-2 ">
+                    <label className="mt-[20px] hidden items-baseline gap-x-2 md:flex ">
                       <span className="poppins400 mr-[17px] text-[13px] text-black">
                         Search
                       </span>
@@ -71,15 +76,22 @@ const DetailModal = (props, ref) => {
                         className="mt-1 block w-full border border-solid border-[#DADEE3] bg-white"
                       />
                     </label>
+                    <div
+                      className={`poppins700 float-right mt-[20px] flex cursor-pointer items-center text-[13px] text-[#3C80BB]  hover:text-[#1f3447] md:hidden`}
+                    >
+                      <MagnifyingGlassIcon className="m-auto mr-1 h-5 w-5" />
+                      <span>Search</span>
+                    </div>
                   </div>
                 </div>
                 {/* body */}
-                <div className="relative flex-auto px-6 pt-[20px]">
-                  <DataTable
-                    columns={columns}
-                    data={data}
-                    className={`hidden md:block`}
-                  />
+                <div className="relative flex-auto px-0 pt-0 md:px-6 md:pt-[20px]">
+                  <div className={`hidden md:block`}>
+                    <SubmissionDataTable columns={columns} data={data} />
+                  </div>
+                  <div className={`block md:hidden `}>
+                    <MSubmissionDataTable columns={columns} data={data} />
+                  </div>
                 </div>
               </div>
             </div>

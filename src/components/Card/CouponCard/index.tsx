@@ -7,7 +7,7 @@ type ICouponCardProps = {
 const Index = (props: ICouponCardProps) => {
   return (
     <div
-      className={`${props.className} h-[200px] w-[275px] bg-[#BB843D] pt-[13px] md:h-[280px] md:w-[334px] md:pt-[16px]`}
+      className={`${props.className} h-[200px] w-[275px] cursor-pointer bg-[#BB843D] pt-[13px] transition-all duration-300 ease-in-out hover:bg-[#daa520] md:h-[280px] md:w-[334px] md:pt-[16px]`}
     >
       <div className="poppins600 w-[100%] text-center text-[18px] uppercase text-black md:text-[24px]">
         {props.title}

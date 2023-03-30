@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import PortalDataTable from '@/components/PortalDataTable';
-import { getColumns } from '@/utils/columnsPortal';
-import { getData } from '@/utils/samplePortalData';
+import { MPortalDataTable, PortalDataTable } from '@/components/DataTable';
+import { getColumns } from '@/components/DataTable/PortalDataTable/columnsPortal';
+import { getData } from '@/components/DataTable/PortalDataTable/samplePortalData';
 
 const MainBoard = ({ className, title }) => {
   const data = useMemo(() => getData(), []);
@@ -18,9 +18,16 @@ const MainBoard = ({ className, title }) => {
         className="relative h-full w-full overflow-y-auto bg-gray-50 dark:bg-gray-900 lg:ml-64"
       >
         <main>
-          <div className="px-5 pt-6 md:px-8">
-            <h2 className={`poppins400 mb-6 text-2xl md:text-4xl`}>{title}</h2>
-            <PortalDataTable columns={columns} data={data} />
+          <div className="px-0 pt-6 md:px-8">
+            <h2 className={`poppins400 mb-6 px-5 text-2xl md:px-0 md:text-4xl`}>
+              {title}
+            </h2>
+            <div className="sr-only md:not-sr-only">
+              <PortalDataTable columns={columns} data={data} />
+            </div>
+            <div className="not-sr-only mb-12 md:sr-only">
+              <MPortalDataTable columns={columns} data={data} />
+            </div>
           </div>
         </main>
         {/* <p className="sr-only my-10 text-center text-sm text-gray-500 lg:not-sr-only">

@@ -1,4 +1,4 @@
-import { NameCell, DetailCell } from '@/components/DataTable/DataTableCell';
+import { NameCell, DetailCell } from '@/components/DataTable/DicSearchDataTable/DataTableCell';
 
 export const getColumns = () => [
   {

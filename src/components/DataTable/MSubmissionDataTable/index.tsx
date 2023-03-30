@@ -148,13 +148,8 @@ export function PageSingleButton({ children, className, ...rest }) {
 //   );
 // }
 
-function GlobalFilter({
-  preGlobalFilteredRows,
-  globalFilter,
-  setGlobalFilter,
-}) {
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  const count = preGlobalFilteredRows ? preGlobalFilteredRows.length : 0;
+// eslint-disable-next-line unused-imports/no-unused-vars
+function GlobalFilter({ globalFilter, setGlobalFilter, className }) {
   const [value, setValue] = React.useState(globalFilter);
   // eslint-disable-next-line @typescript-eslint/no-shadow
   const onChange = useAsyncDebounce((value: any) => {
@@ -162,7 +157,7 @@ function GlobalFilter({
   }, 200);
 
   return (
-    <label className="flex items-baseline gap-x-2">
+    <label className={`${className} flex items-baseline gap-x-2`}>
       <span className="poppins400 mr-[17px] text-[13px] text-black">
         Search
       </span>
@@ -180,27 +175,25 @@ function GlobalFilter({
   );
 }
 
-const Index = ({ columns, data, className }) => {
+const Index = ({ columns, data }) => {
   const {
     getTableProps,
     getTableBodyProps,
+    // eslint-disable-next-line unused-imports/no-unused-vars
     headerGroups,
     prepareRow,
 
     state,
 
+    // eslint-disable-next-line unused-imports/no-unused-vars
     preGlobalFilteredRows,
+    // eslint-disable-next-line unused-imports/no-unused-vars
     setGlobalFilter,
 
     page,
 
-    canPreviousPage,
-    canNextPage,
     pageOptions,
-    pageCount,
-    gotoPage,
-    nextPage,
-    previousPage,
+
     setPageSize,
   } = useTable(
     {
@@ -212,48 +205,13 @@ const Index = ({ columns, data, className }) => {
     useSortBy,
     usePagination
   );
+
   useEffect(() => {
     setPageSize(5);
   }, []);
 
   return (
     <>
-      <div
-        className={`sr-only flex justify-between gap-x-2 border border-gray-300 bg-white px-5 py-4 ${className}`}
-      >
-        <label className="flex items-center">
-          <span className="poppins400 mt-[5px] mr-3 text-[13px]">Show</span>
-          <select
-            className="block w-full border border-[#DADEE3]"
-            value={state.pageSize}
-            onChange={(e) => {
-              setPageSize(Number(e.target.value));
-            }}
-          >
-            {[5, 10, 20].map((pageSize) => (
-              <option key={pageSize} value={pageSize}>
-                {pageSize}
-              </option>
-            ))}
-          </select>
-          <span className="poppins400 mt-[5px] ml-3 text-[13px]">entries</span>
-        </label>
-        <GlobalFilter
-          preGlobalFilteredRows={preGlobalFilteredRows}
-          globalFilter={state.globalFilter}
-          setGlobalFilter={setGlobalFilter}
-        />
-        {/* {headerGroups.map((headerGroup) =>
-          headerGroup.headers.map((column) =>
-            column.Filter ? (
-              <div className="mt-2 sm:mt-0" key={column.id}>
-                {column.render('Filter')}
-              </div>
-            ) : null
-          )
-        )} */}
-      </div>
-      {/* table */}
       <div className="flex flex-col">
         <div className="-my-2 overflow-x-auto lg:-mx-8">
           <div className="inline-block min-w-full py-2 align-middle lg:px-8">
@@ -262,22 +220,22 @@ const Index = ({ columns, data, className }) => {
                 {...getTableProps()}
                 className="poppins400 min-w-full divide-y divide-gray-300"
               >
-                <thead className="bg-[#3C80BB]/20 ">
+                <thead className="bg-white">
                   {headerGroups.map((headerGroup) => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
-                      {headerGroup.headers.map((column) => (
-                        <th
-                          scope="col"
-                          className="Poppins700 group px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
-                          {...column.getHeaderProps(
-                            column.getSortByToggleProps()
-                          )}
-                        >
-                          <div className="flex items-center">
-                            {column.render('Header')}
+                      <th
+                        colspan="2"
+                        className="poppins700 group bg-[#3C80BB]/20 px-6 py-3 text-left text-xs font-medium tracking-wider text-black"
+                        {...headerGroup.headers[1].getHeaderProps(
+                          headerGroup.headers[1].getSortByToggleProps()
+                        )}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="poppins700 flex items-center">
+                            {headerGroup.headers[1].render('Header')}
                             <span className="ml-2">
-                              {column.isSorted ? (
-                                column.isSortedDesc ? (
+                              {headerGroup.headers[1].isSorted ? (
+                                headerGroup.headers[1].isSortedDesc ? (
                                   <SortDownIcon className="h-4 w-4 text-black" />
                                 ) : (
                                   <SortUpIcon className="h-4 w-4 text-black" />
@@ -287,8 +245,18 @@ const Index = ({ columns, data, className }) => {
                               )}
                             </span>
                           </div>
-                        </th>
-                      ))}
+                          <label className="flex items-center">
+                            <span className="poppins400 mr-3 whitespace-nowrap text-[13px] text-black">
+                              Show:
+                            </span>
+                            <select className="poppins700 block w-full border border-[#DADEE3] p-2">
+                              <option>Date</option>
+                              <option>Discription</option>
+                            </select>
+                          </label>
+                        </div>
+                      </th>
+                      <th></th>
                     </tr>
                   ))}
                 </thead>
@@ -301,24 +269,20 @@ const Index = ({ columns, data, className }) => {
                     prepareRow(row);
                     return (
                       <tr {...row.getRowProps()} className=" hover:bg-gray-50">
-                        {row.cells.map((cell, j) => {
-                          return (
-                            <td
-                              {...cell.getCellProps()}
-                              className="whitespace-nowrap px-5 py-4"
-                              role="cell"
-                              key={j}
-                            >
-                              {cell.column.Cell.name === 'defaultRenderer' ? (
-                                <div className="text-left text-xs text-gray-500">
-                                  {cell.render('Cell')}
-                                </div>
-                              ) : (
-                                cell.render('Cell')
-                              )}
-                            </td>
-                          );
-                        })}
+                        <td
+                          {...row.cells[1].getCellProps()}
+                          className="whitespace-nowrap px-5 py-4 text-[12px]"
+                          role="cell"
+                        >
+                          {row.cells[1].render('Cell')}
+                        </td>
+                        <td
+                          {...row.cells[0].getCellProps()}
+                          className="whitespace-nowrap px-5 py-4  text-[12px]"
+                          role="cell"
+                        >
+                          {row.cells[0].render('Cell')}
+                        </td>
                       </tr>
                     );
                   })}
@@ -335,25 +299,9 @@ const Index = ({ columns, data, className }) => {
         </pre>
       </div> */}
       {/* Pagination */}
-      <div className="flex items-center justify-between py-3">
-        <div className="flex flex-1 justify-between sm:hidden">
-          <Button
-            onClick={() => previousPage()}
-            disabled={!canPreviousPage}
-            className={``}
-          >
-            Previous
-          </Button>
-          <Button
-            onClick={() => nextPage()}
-            disabled={!canNextPage}
-            className={``}
-          >
-            Next
-          </Button>
-        </div>
-        <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-          <div className="flex items-baseline gap-x-2">
+      <div className="flex items-center justify-between py-3 md:hidden">
+        <div className=" flex flex-1 items-center justify-between">
+          <div className="flex items-baseline py-3 pl-3">
             <span className="text-sm text-black">
               Showing <span className="font-medium">{state.pageSize}</span> of{' '}
               <span className="font-medium">
@@ -361,73 +309,6 @@ const Index = ({ columns, data, className }) => {
               </span>{' '}
               entries
             </span>
-          </div>
-          <div>
-            <nav
-              className="sr-only relative z-0 inline-flex -space-x-px md:mr-[40px]"
-              aria-label="Pagination"
-            >
-              <PageButton
-                className=""
-                onClick={() => gotoPage(0)}
-                disabled={!canPreviousPage}
-              >
-                <span className="">First</span>
-                {/* <ChevronDoubleLeftIcon
-                  className="h-5 w-5 text-gray-700"
-                  aria-hidden="true"
-                /> */}
-              </PageButton>
-
-              <PageButton
-                onClick={() => previousPage()}
-                disabled={!canPreviousPage}
-                className={``}
-              >
-                <span className="">Previous</span>
-                {/* <ChevronLeftIcon
-                  className="h-5 w-5 text-gray-700"
-                  aria-hidden="true"
-                /> */}
-              </PageButton>
-              <PageSingleButton className={``}>
-                <span className="w-[20px] bg-[#11253C] text-white">1</span>
-              </PageSingleButton>
-              <PageSingleButton className={``}>
-                <span className="w-[20px] ">2</span>
-              </PageSingleButton>
-              <PageSingleButton className={``}>
-                <span className="w-[20px] ">3</span>
-              </PageSingleButton>
-              <PageSingleButton className={``}>
-                <span className="w-[20px] ">4</span>
-              </PageSingleButton>
-              <PageSingleButton className={``}>
-                <span className="w-[20px] ">5</span>
-              </PageSingleButton>
-              <PageButton
-                onClick={() => nextPage()}
-                disabled={!canNextPage}
-                className={``}
-              >
-                <span className="">Next</span>
-                {/* <ChevronRightIcon
-                  className="h-5 w-5 text-gray-700"
-                  aria-hidden="true"
-                /> */}
-              </PageButton>
-              <PageButton
-                className=""
-                onClick={() => gotoPage(pageCount - 1)}
-                disabled={!canNextPage}
-              >
-                <span className="">Last</span>
-                {/* <ChevronDoubleRightIcon
-                  className="h-5 w-5 text-gray-700"
-                  aria-hidden="true"
-                /> */}
-              </PageButton>
-            </nav>
           </div>
         </div>
       </div>

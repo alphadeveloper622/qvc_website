@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { ButtonTypes } from '@/utils/global';
+import { ButtonTypes } from '@/types/global';
 
 import { buttonClass } from './style';
 

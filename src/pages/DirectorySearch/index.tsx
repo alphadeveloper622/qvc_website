@@ -2,7 +2,7 @@ import { connect, useSelector } from 'react-redux';
 
 import { selectDirectorySearchState } from '@/store/slices/directorySearchSlice';
 import Footer from '@/templates/Footer';
-import Header from '@/templates/Header';
+import Header from '@/templates/Header/CommonHeader';
 import { HeroDirectorySearch } from '@/templates/Hero';
 
 import SectionDirectorySearch from './SectionDirectorySearch';

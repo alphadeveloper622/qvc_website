@@ -1,5 +1,5 @@
 import Footer from '@/templates/Footer';
-import PortalHeader from '@/templates/PortalHeader';
+import { PortalHeader } from '@/templates/Header';
 
 import MainBoard from './MainBoard';
 import SideBar from './SideBar';

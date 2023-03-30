@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-key */
 import React, { useEffect } from 'react';
 
-import { MagnifyingGlassIcon } from '@heroicons/react/20/solid';
 import classNames from 'classnames';
 import {
   useTable,
@@ -149,7 +148,6 @@ export function PageSingleButton({ children, className, ...rest }) {
 //   );
 // }
 
-// eslint-disable-next-line unused-imports/no-unused-vars
 function GlobalFilter({ globalFilter, setGlobalFilter, className }) {
   const [value, setValue] = React.useState(globalFilter);
   // eslint-disable-next-line @typescript-eslint/no-shadow
@@ -187,7 +185,6 @@ const Index = ({ columns, data, className }) => {
 
     // eslint-disable-next-line unused-imports/no-unused-vars
     preGlobalFilteredRows,
-    // eslint-disable-next-line unused-imports/no-unused-vars
     setGlobalFilter,
 
     page,
@@ -237,18 +234,12 @@ const Index = ({ columns, data, className }) => {
           </select>
           <span className="poppins400 mt-[5px] ml-3 text-[13px]">entries</span>
         </label>
-        {/* <GlobalFilter
+        <GlobalFilter
           // preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={state.globalFilter}
           setGlobalFilter={setGlobalFilter}
-          className="hidden md:block"
-        /> */}
-        <div
-          className={`poppins700 float-right flex cursor-pointer items-center text-[13px] text-[#3C80BB] hover:text-[#1f3447]`}
-        >
-          <MagnifyingGlassIcon className="m-auto mr-1 h-5 w-5" />
-          <span>Search</span>
-        </div>
+          className={``}
+        />
         {/* {headerGroups.map((headerGroup) =>
           headerGroup.headers.map((column) =>
             column.Filter ? (
@@ -297,27 +288,6 @@ const Index = ({ columns, data, className }) => {
                           ) : (
                             ''
                           )}
-                          <label className="hidden items-center">
-                            <span className="poppins400 mt-[5px] mr-3 text-[13px]">
-                              Show
-                            </span>
-                            <select
-                              className="block w-full border border-[#DADEE3]"
-                              value={state.pageSize}
-                              onChange={(e) => {
-                                setPageSize(Number(e.target.value));
-                              }}
-                            >
-                              {[5, 10, 20].map((pageSize) => (
-                                <option key={pageSize} value={pageSize}>
-                                  {pageSize}
-                                </option>
-                              ))}
-                            </select>
-                            <span className="poppins400 mt-[5px] ml-3 text-[13px]">
-                              entries
-                            </span>
-                          </label>
                         </th>
                       ))}
                     </tr>

@@ -21,7 +21,7 @@ const Summary = (props: IHeroNewsProps) => {
     description = 'Lorem ipsum dolor sit amet consectetur. Tristique ut lectus magnis risus sed venenatis nisl rutrum. Senectus quis diam tellus massa. Tellus consequat dictum quis vulputate nunc.',
   } = props;
   return (
-    <div className={`${props.className} poppins400 md:w-1/2 md:pr-[100px]`}>
+    <div className={`${props.className} poppins400 md:w-1/2 md:pr-[50px]`}>
       <div className="poppins600 mt-[17px] text-[16px]">
         <p>{date}</p>
       </div>

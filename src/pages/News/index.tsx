@@ -1,7 +1,7 @@
 import Footer from '@/templates/Footer';
-import Header from '@/templates/Header';
+import Header from '@/templates/Header/CommonHeader';
 import { HeroNews } from '@/templates/Hero';
-import { BorderDirections } from '@/utils/global';
+import { BorderDirections } from '@/types/global';
 
 import SectionStory from './SectionStory';
 import SectionStoryList from './SectionStoryList';

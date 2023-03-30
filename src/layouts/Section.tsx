@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 import Image, { StaticImageData } from 'next/image';
 
-import { TextDirections, BorderDirections } from '@/utils/global';
+import { TextDirections, BorderDirections } from '@/types/global';
 import MarkPic from '@@/images/mark.png';
 
 type ISectionProps = {

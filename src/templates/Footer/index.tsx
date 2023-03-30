@@ -2,7 +2,7 @@ import Copyright from '@/components/Copyright';
 import Logo from '@/components/Logo';
 import Menu from '@/components/Menu';
 import { Section } from '@/layouts/Section';
-import { BorderDirections } from '@/utils/global';
+import { BorderDirections } from '@/types/global';
 
 export default function Index({ className }: { className?: string }) {
   return (

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { RedFillRoundButton } from '@/components/Button';
 import { Section } from '@/layouts/Section';
-import { TextDirections } from '@/utils/global';
+import { TextDirections } from '@/types/global';
 import heroNewsMobilePic from '@@/images/news/hero-news-mobile.jpg';
 import heroNewsPic from '@@/images/news/hero-news.jpg';
 

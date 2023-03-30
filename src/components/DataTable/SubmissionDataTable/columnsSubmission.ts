@@ -1,4 +1,4 @@
-import { NameCell } from '@/components/SubmissionDataTable/DataTableCell';
+import { NameCell } from '@/components/DataTable/SubmissionDataTable/DataTableCell';
 
 export const getColumns = () => [
   {
