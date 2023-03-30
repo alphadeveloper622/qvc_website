@@ -56,12 +56,12 @@ export default function Index() {
           className={`poppins400 reveal-active fade-bottom absolute top-[8vw] left-[8vw] text-white desktop:top-[115px] desktop:left-[115px]`}
         >
           <div className="hero-title text-[30px] lg:text-[52px]">
-            <p>Get your coins certified.</p>
+            <p>Get your coins qualified.</p>
             <p>Maximize your value.</p>
           </div>
           <div className="hero-subtitle text-[20px] lg:text-[28px]">
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-            <p>Ut id purus tincidunt congue nisl eget.</p>
+            <p>CMQ coins result in higher market prices and </p>
+            <p>added liquidity</p>
           </div>
         </div>
         {/* <div className="h-[71px] w-full"></div> */}
@@ -76,7 +76,7 @@ export default function Index() {
           className={`poppins400 absolute top-[30px] left-[28px] text-white`}
         >
           <div className="hero-title text-[26px]">
-            <p>Get your coins certified.</p>
+            <p>Get your coins qualified.</p>
             <p>Maximize your value.</p>
           </div>
         </div>
