@@ -41,10 +41,10 @@ const Index = (props: IMenuProps) => {
       >
         <li
           className={`${liDeskClass} ${liMobileClassFunc} ${
-            menuActive === EMenuState.HOME ? liActiveClassFunc : ''
+            menuActive === EMenuState.NEWS ? liActiveClassFunc : ''
           } `}
           onClick={() => {
-            onClickHandle(EMenuState.HOME);
+            onClickHandle(EMenuState.NEWS);
           }}
         >
           <Link href="/News">NEWS</Link>

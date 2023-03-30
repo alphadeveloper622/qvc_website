@@ -1,5 +1,6 @@
 export const enum EMenuState {
   HOME,
+  NEWS,
   PORTAL,
   COINLOOKUP,
   DIRECTORYSEARCH,
