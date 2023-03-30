@@ -87,7 +87,7 @@ export default function Index() {
             </h1>
           </div>
           <div className="mt-4">
-            <DataTable columns={columns} data={data} />
+            <DataTable columns={columns} data={data} className={''} />
           </div>
         </main>
       </div>
