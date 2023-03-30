@@ -10,7 +10,7 @@ type IButtonProps = {
 const Index = (props: IButtonProps) => {
   return (
     <div
-      className={`${props.className} poppins400 hero-button flex h-[100px] w-[100%] items-center justify-end rounded-r-[4px] bg-[#A5221E] text-white transition-all duration-300 ease-in-out hover:bg-[#781b18] md:h-[148px] md:max-w-[843px]`}
+      className={`${props.className} poppins400  hero-button flex h-[100px] w-[100%] cursor-pointer items-center justify-end rounded-r-[4px] bg-[#A5221E] text-white transition-all duration-300 ease-in-out hover:bg-[#781b18] md:h-[148px] md:max-w-[843px]`}
     >
       <div className="text-right text-[20px] md:text-[30px]">
         <p>{props.title}</p>
