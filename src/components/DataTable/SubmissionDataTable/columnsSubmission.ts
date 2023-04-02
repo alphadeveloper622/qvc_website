@@ -21,7 +21,7 @@ export const getColumns = () => [
     accessor: 'grade',
   },
   {
-    Header: 'LabelID',
+    Header: 'Label ID',
     accessor: 'labelid',
   },
   {

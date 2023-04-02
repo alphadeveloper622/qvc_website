@@ -2,12 +2,12 @@ export const getData = () => {
   const data = [
     {
       dealerID: 1001,
-      date: '1885-o',
+      date: '1885-O',
       description: 'Dollars Morgan',
       service: 'PCGS',
       grade: 'MS67+',
       labelid: '46718504',
-      result: 'upgraded',
+      result: 'Ungraded',
     },
     {
       dealerID: 1001,
@@ -16,7 +16,7 @@ export const getData = () => {
       service: 'PCGS',
       grade: 'MS66',
       labelid: '46718507',
-      result: 'upgraded',
+      result: 'Ungraded',
     },
     {
       dealerID: 1001,
@@ -25,7 +25,7 @@ export const getData = () => {
       service: 'PCGS',
       grade: 'MS65',
       labelid: '46718504',
-      result: 'upgraded',
+      result: 'Ungraded',
     },
     {
       dealerID: 1001,
@@ -34,7 +34,7 @@ export const getData = () => {
       service: 'PCGS',
       grade: 'MS65',
       labelid: '46718507',
-      result: 'upgraded',
+      result: 'Ungraded',
     },
     {
       dealerID: 1001,
@@ -43,16 +43,16 @@ export const getData = () => {
       service: 'PCGS',
       grade: 'MS65',
       labelid: '46718508',
-      result: 'upgraded',
+      result: 'Ungraded',
     },
     {
       dealerID: 1001,
-      date: '1885-o',
+      date: '1885-O',
       description: 'Dollars Morgan',
       service: 'PCGS',
       grade: 'MS67+',
       labelid: '46718504',
-      result: 'upgraded',
+      result: 'Ungraded',
     },
   ];
   return [...data];

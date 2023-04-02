@@ -268,7 +268,7 @@ const Index = ({ columns, data }) => {
                       {headerGroup.headers.map((column) => (
                         <th
                           scope="col"
-                          className="Poppins700 group px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-black"
+                          className="Poppins700 group px-6 py-3 text-left text-xs font-medium tracking-wider text-black"
                           {...column.getHeaderProps(
                             column.getSortByToggleProps()
                           )}

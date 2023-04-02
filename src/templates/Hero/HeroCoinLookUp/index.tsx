@@ -38,7 +38,7 @@ const Index = (props: IHeroCoinLookUpProps) => {
           className="block aspect-[414/199] w-full mobile:h-[199px] md:hidden"
         />
         <div
-          className={`poppins400 absolute top-1/2 m-auto w-full -translate-y-2/3 pl-[28px] pr-[47px] text-white md:pl-[7%] xl:w-1/2`}
+          className={`poppins400 absolute top-1/2 m-auto w-full -translate-y-2/3 pl-[28px] pr-[47px] text-white md:pl-[7%] xl:w-[51%]`}
         >
           <h1
             className={`reveal-active fade-left mb-[9px] text-[26px] leading-[32.76px] md:mb-[15px] md:text-[33px] md:leading-[42px] lg:text-[52px] lg:leading-[65.52px]`}
